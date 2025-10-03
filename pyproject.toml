@@ -18,6 +18,7 @@ pytest-env = "^1.1.5"
 flake8 = "^7.1.1"
 aiosqlite = "^0.21.0"
 pytest-asyncio = "^0.25.3"
+fastapi-pagination = "^0.14.2"
 
 
 [build-system]
