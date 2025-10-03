@@ -28,7 +28,7 @@ async def get_movies(
         per_page: int = Query(10, ge=1, le=20, description="Movies per page"),
         db: AsyncSession = Depends(get_db),
 ):
-    total_items = await db.scalar(select(func.count()).select_from(MovieModel))
+    total_items = int(await db.scalar(select(func.count()).select_from(MovieModel)))
 
     if total_items == 0:
         raise HTTPException(status_code=404, detail="No movies found.")
